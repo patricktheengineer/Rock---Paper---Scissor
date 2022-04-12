@@ -1,0 +1,75 @@
+import random
+
+
+while True:
+
+    choices = ["rock","paper","scissor"]
+
+    computer = random.choice(choices)
+
+    score = 0
+
+    failed_answer = 0
+
+    player = None
+
+    while player not in choices:
+        player = input("Rock,Paper, or Scissor?: ").lower()
+
+    if player == computer:
+        print("computer: " + computer)
+        print("player: " + player)
+        print("its a tie ")
+
+    elif player == "rock":
+        if computer == "paper":
+            print("computer: " + computer)
+            print("player: " + player)
+            print("you lose")
+
+            failed_answer -= 1
+
+        if computer == "scissor":
+            print("computer: " + computer)
+            print("player: " + player)
+            print("you win")
+            score += 1
+
+    elif player == "paper":
+        if computer == "scissor":
+            print("computer: " + computer)
+            print("player: " + player)
+            print("you lose")
+
+            failed_answer += 1
+
+
+        if computer == "rock":
+            print("computer: " + computer)
+            print("player: " + player)
+            print("you win")
+            score += 1
+
+    elif player == "scissor":
+        if computer == "rock":
+            print("computer: " + computer)
+            print("player: " + player)
+            print("you lose")
+
+            failed_answer += 1
+
+        if computer == "paper":
+            print("computer: " + computer)
+            print("player: " + player)
+            print("you win")
+            score += 1
+
+    print("Player Win Totals:" + str(score))
+    print("Player Lose Totals: " + str(failed_answer))
+
+    play_again  = input("Play again? (yes/no): ").lower()
+
+    if play_again != "yes":
+        quit()
+
+print("Thanks for playing")
